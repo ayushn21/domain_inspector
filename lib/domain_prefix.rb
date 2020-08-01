@@ -109,5 +109,15 @@ module DomainPrefix
     end
   end
   
+  def is_tld?(fqdn)
+    fqdn == registered_domain(fqdn)
+  end
+  
+  def subdomain_component(fqdn)
+    return nil if is_tld?(fqdn)
+    
+    fqdn.chomp ".#{registered_domain(fqdn)}"  
+  end
+  
   extend self
 end
