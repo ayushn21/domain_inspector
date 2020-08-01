@@ -1,4 +1,4 @@
-# domain_prefix
+# domain_inspector
 
 This is a library to determine the registration prefix for a given domain
 and can be used to assert if a given domain name is valid or not.
@@ -8,21 +8,21 @@ and can be used to assert if a given domain name is valid or not.
 The `registered_domain` method returns the name of the registered domain
 associated witha given hostname, or Fully Qualified Domain Name (FQDN):
 
-    DomainPrefix.registered_domain('test.example.com')
+    DomainInspector.registered_domain('test.example.com')
     # => 'example.com'
-    DomainPrefix.registered_domain('test.example.ca')
+    DomainInspector.registered_domain('test.example.ca')
     # => 'example.ca'
-    DomainPrefix.registered_domain('test.example.co.uk')
+    DomainInspector.registered_domain('test.example.co.uk')
     # => 'example.co.uk'
 
 The `public_suffix` method returns the suffix into which this domain is
 registered:
 
-    DomainPrefix.public_suffix('test.example.com')
+    DomainInspector.public_suffix('test.example.com')
     # => 'com'
-    DomainPrefix.public_suffix('test.example.ca')
+    DomainInspector.public_suffix('test.example.ca')
     # => 'ca'
-    DomainPrefix.public_suffix('test.example.co.uk')
+    DomainInspector.public_suffix('test.example.co.uk')
     # => 'co.uk'
 
 Note that the "public suffix" component of a domain can be quite lengthy
@@ -42,7 +42,7 @@ in this library either.
 To update the data used to make the domain determinations, there's a
 rake task:
 
-    rake domain_prefix:update
+    rake domain_inspector:update
 
 The test case data is pulled from a separate source:
 
@@ -52,7 +52,6 @@ The source of this data is the [Public Suffix List](https://github.com/publicsuf
 which is licensed under the Mozilla Public License 2.0. A portion of this
 project is included in this gem.
 
-## Copyright
+## Licence
 
-Copyright (c) 2009-2019 Scott Tadman, PostageApp Ltd.
-See [LICENSE](LICENSE.txt) for details.
+DomainInspector is available under the MIT Licence: [LICENSE](LICENSE.txt).

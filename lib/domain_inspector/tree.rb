@@ -1,10 +1,10 @@
 require 'simpleidn'
 
-class DomainPrefix::Tree < Hash
+class DomainInspector::Tree < Hash
   # == Instance Methods =====================================================
   
   def insert(path)
-    components = path.sub(/^!/, '').split(DomainPrefix::SEPARATOR).reverse
+    components = path.sub(/^!/, '').split(DomainInspector::SEPARATOR).reverse
 
     leaves = components.inject([ self ]) do |trees, part|
       [ part, SimpleIDN.to_unicode(part), SimpleIDN.to_ascii(part) ].uniq.flat_map do |l|

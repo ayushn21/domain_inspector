@@ -7,12 +7,12 @@ begin
   require 'juwelier'
 
   Juwelier::Tasks.new do |gem|
-    gem.name = "domain_prefix"
-    gem.summary = "Domain Prefix Extraction Library"
-    gem.description = "A library to extract information about top-level domain and registered name from generic and international domain names"
-    gem.email = "tadman@postageapp.com"
-    gem.homepage = "http://github.com/postageapp/domain_prefix"
-    gem.authors = [ 'Scott Tadman' ]
+    gem.name = "domain_inspector"
+    gem.summary = "Domain Name Inspection Library"
+    gem.description = "A library to extract information and subdomains from top-level domains and registered name from generic and international domain names"
+    gem.email = "ayush@hey.com"
+    gem.homepage = "http://github.com/ayushn21/domain_inspector"
+    gem.authors = [ 'Scott Tadman', 'Ayush Newatia' ]
   end
 
   Juwelier::GemcutterTasks.new
@@ -28,7 +28,7 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-namespace :domain_prefix do
+namespace :domain_inspector do
   desc "Update the domain information"
   task :update do
     require 'open-uri'

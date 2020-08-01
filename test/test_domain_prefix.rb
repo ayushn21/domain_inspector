@@ -1,8 +1,8 @@
 require_relative 'helper'
 
-class TestDomainPrefix < Test::Unit::TestCase
+class TestDomainInspector < Test::Unit::TestCase
   def test_initialization
-    assert DomainPrefix::TLD_SET.length > 0
+    assert DomainInspector::TLD_SET.length > 0
   end
   
   def test_examples
@@ -22,8 +22,8 @@ class TestDomainPrefix < Test::Unit::TestCase
       'example.metro.tokyo.jp' => %w[ metro.tokyo.jp tokyo.jp ]
     ) do |domain|
       [
-        DomainPrefix.registered_domain(domain),
-        DomainPrefix.public_suffix(domain)
+        DomainInspector.registered_domain(domain),
+        DomainInspector.public_suffix(domain)
       ]
     end
   end
@@ -46,7 +46,7 @@ class TestDomainPrefix < Test::Unit::TestCase
         nil
       end
     end.each do |domain, expected|
-      assert_equal expected, DomainPrefix.registered_domain(domain, :relaxed), "#{domain.inspect} -> #{expected.inspect}"
+      assert_equal expected, DomainInspector.registered_domain(domain, :relaxed), "#{domain.inspect} -> #{expected.inspect}"
     end
   end
 end

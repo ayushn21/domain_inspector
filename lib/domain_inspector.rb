@@ -1,9 +1,9 @@
 # encoding: UTF-8
 
-module DomainPrefix
+module DomainInspector
   # == Dependencies =========================================================
 
-  require 'domain_prefix/tree'
+  require 'domain_inspector/tree'
   
   # == Constants ============================================================
 
